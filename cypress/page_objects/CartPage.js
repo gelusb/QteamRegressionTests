@@ -6,7 +6,7 @@ class CartPage {
       .type(quantity);
   }
 
-  //removeProductFromBasket
+  //removeProductFromBasket - mai degraba clickRemoveProductFromBasket
   removeProduct(productName) {
     cy.contains('#shopping-cart-table', productName).find('.action.action-delete').click();
   }
