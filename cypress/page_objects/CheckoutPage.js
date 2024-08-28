@@ -1,4 +1,5 @@
 class CheckoutPage {
+  
     constructor() {
       this.emailAddressInput = '#customer-email'
       this.firstNameInput = '[name="shippingAddress.firstname"]';
@@ -31,6 +32,7 @@ class CheckoutPage {
       cy.get(this.selectShippingOption).eq(number).click(); 
     }
 
+  
     clickOnNextButton() {
       cy.get(this.clickNextButton).click();
     }
