@@ -1,0 +1,26 @@
+{
+    "products": [
+      {
+        "name": "Lono Yoga Short",
+        "size": "34",
+        "color": "Blue"
+      },
+      {
+        "name": "Lando Gym Jacket",
+        "size": "L",
+        "color": "Blue"
+      }
+    ],
+    "shippingDetails": {
+      "emailAddress": "testuser01@gmail.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "address": "123 Main St",
+      "city": "Anchorage",
+      "zipCode": "10001-9876",
+      "phoneNumber": "0747654231",
+      "countryName": "United States",
+      "regionName": "Alaska"
+    }
+  }
+  
