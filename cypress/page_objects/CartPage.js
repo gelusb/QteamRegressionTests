@@ -1,4 +1,4 @@
-export class CartPage {
+class CartPage {
     updateQuantity(productName, quantity) {
       cy.contains('.cart.items.data.table', productName)
         .find('.input-text.qty')
@@ -25,5 +25,5 @@ export class CartPage {
     }
   }
   
-export  const cartPage = new CartPage();
+export default CartPage;
   

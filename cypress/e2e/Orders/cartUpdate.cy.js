@@ -1,6 +1,6 @@
-import homePage from '../../page_objects/HomePage';
-import productPage from '../../page_objects/ProductPage';
-import cartPage from '../../page_objects/CartPage';
+import HomePage from '../../page_objects/HomePage';
+import ProductPage from '../../page_objects/ProductPage';
+import CartPage from '../../page_objects/CartPage';
 import testData from '../../fixtures/testData.json';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -8,6 +8,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 describe('Cart Updates and Edge Cases', () => {
+    const homePage = new HomePage();
+    const productPage = new ProductPage();
+    const cartPage = new CartPage();
 
   it('This case should update quantities and handle cart assertion correctly', () => {
     homePage.visit();

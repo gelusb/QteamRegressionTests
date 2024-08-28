@@ -1,7 +1,7 @@
-import homePage from '../../page_objects/HomePage';
-import productPage from '../../page_objects/ProductPage';
-import cartPage from '../../page_objects/CartPage';
-import checkoutPage from '../../page_objects/CheckoutPage';
+import HomePage from '../../page_objects/HomePage';
+import ProductPage from '../../page_objects/ProductPage';
+import CartPage from '../../page_objects/CartPage';
+import CheckoutPage from '../../page_objects/CheckoutPage';
 import testData from '../../fixtures/testData.json';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -9,6 +9,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 describe('Invalid Checkout Scenarios', () => {
+    const homePage = new HomePage();
+    const productPage = new ProductPage();
+    const cartPage = new CartPage();
+    const checkoutPage = new CheckoutPage();
 
   it('should show validation errors for missing shipping information', () => {
     homePage.visit();

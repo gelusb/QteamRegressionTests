@@ -1,4 +1,4 @@
-export class CheckoutPage {
+class CheckoutPage {
     constructor() {
       this.emailAddressInput = '#customer-email'
       this.firstNameInput = '[name="shippingAddress.firstname"]';
@@ -41,5 +41,5 @@ export class CheckoutPage {
     }
   }
   
-  export const checkoutPage = new CheckoutPage();
+  export default CheckoutPage;
   

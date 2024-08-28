@@ -1,4 +1,4 @@
-export class HomePage {
+ class HomePage {
     visit() {
       cy.visit('https://magento.softwaretestingboard.com/');
     }
@@ -21,5 +21,5 @@ export class HomePage {
     }
   }
   
-  export const homePage = new HomePage();
+  export default HomePage;
   

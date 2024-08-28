@@ -1,4 +1,4 @@
-export class OrderConfirmationPage {
+class OrderConfirmationPage {
     constructor() {
       this.orderSuccessMessage = '.base';
       this.orderNumber = '.checkout-success';
@@ -13,5 +13,5 @@ export class OrderConfirmationPage {
     }
   }
   
-  export const orderConfirmationPage = new OrderConfirmationPage();
+  export default OrderConfirmationPage;
   

@@ -1,4 +1,4 @@
-export class ProductPage {
+class ProductPage {
     selectSize(size) {
       cy.get('.swatch-option.text').contains(size).click();
     }
@@ -21,5 +21,5 @@ export class ProductPage {
     }
   }
   
-export  const productPage = new ProductPage();
+export  default ProductPage;
   

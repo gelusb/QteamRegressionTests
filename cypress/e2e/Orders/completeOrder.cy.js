@@ -1,8 +1,8 @@
-import homePage from '../../page_objects/HomePage';
-import productPage from '../../page_objects/ProductPage';
-import cartPage from '../../page_objects/CartPage';
-import checkoutPage from '../../page_objects/CheckoutPage';
-import orderConfirmationPage from '../../page_objects/OrderConfirmationPage';
+import HomePage from '../../page_objects/HomePage';
+import ProductPage from '../../page_objects/ProductPage';
+import CartPage from '../../page_objects/CartPage';
+import CheckoutPage from '../../page_objects/CheckoutPage';
+import OrderConfirmationPage from '../../page_objects/OrderConfirmationPage';
 import testData from '../../fixtures/testData.json';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -10,6 +10,11 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 describe('Complete Order Flow with Multiple Products', () => {
+    const homePage = new HomePage();
+    const productPage = new ProductPage();
+    const cartPage = new CartPage();
+    const checkoutPage = new CheckoutPage();
+    const orderConfirmationPage = new OrderConfirmationPage();
 
   it('should complete an order with multiple products and variations', () => {
     homePage.visit();
