@@ -18,3 +18,15 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+
+// Functia asta iti scoate toate XHR urile din Debugger sa poti urmari mai usor ce se intampla int est
+
+const app = window.top;
+if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
+  const style = app.document.createElement('style');
+  style.innerHTML =
+    '.command-name-request, .command-name-xhr { display: none }';
+  style.setAttribute('data-hide-command-log-request', '');
+  app.document.head.appendChild(style);
+}

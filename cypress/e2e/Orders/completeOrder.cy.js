@@ -10,6 +10,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 describe('Complete Order Flow with Multiple Products', () => {
+
+  // importurile astea nu-s ok, trebuia facute direct pe pagina de HomePage,ProductPage etc
     const homePage = new HomePage();
     const productPage = new ProductPage();
     const cartPage = new CartPage();
@@ -17,6 +19,8 @@ describe('Complete Order Flow with Multiple Products', () => {
     const orderConfirmationPage = new OrderConfirmationPage();
 
   it('should complete an order with multiple products and variations', () => {
+
+    // Dale nume la functii mai clare si ami lungi, nu te zgarci la cuvinte
     homePage.visit();
     homePage.searchProduct(testData.products[0].name);
     homePage.selectProductFromResults(testData.products[0].name);
@@ -35,6 +39,8 @@ describe('Complete Order Flow with Multiple Products', () => {
     checkoutPage.fillShippingDetails(testData.shippingDetails);
     checkoutPage.selectShipping(0);
     checkoutPage.clickOnNextButton();
+    
+    // clickPlaceOrderButton, de exemplu
     checkoutPage.placeOrder();
     orderConfirmationPage.verifyOrderSuccess();
     orderConfirmationPage.getOrderNumber().then((orderNumber) => {
