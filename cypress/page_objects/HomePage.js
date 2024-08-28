@@ -1,4 +1,4 @@
-class HomePage {
+export class HomePage {
     visit() {
       cy.visit('https://magento.softwaretestingboard.com/');
     }

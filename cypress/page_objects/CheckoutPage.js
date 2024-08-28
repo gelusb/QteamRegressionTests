@@ -1,4 +1,4 @@
-class CheckoutPage {
+export class CheckoutPage {
     constructor() {
       this.emailAddressInput = '#customer-email'
       this.firstNameInput = '[name="shippingAddress.firstname"]';

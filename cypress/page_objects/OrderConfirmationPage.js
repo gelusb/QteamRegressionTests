@@ -1,4 +1,4 @@
-class OrderConfirmationPage {
+export class OrderConfirmationPage {
     constructor() {
       this.orderSuccessMessage = '.base';
       this.orderNumber = '.checkout-success';

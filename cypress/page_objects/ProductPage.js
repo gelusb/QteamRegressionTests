@@ -1,4 +1,4 @@
-class ProductPage {
+export class ProductPage {
     selectSize(size) {
       cy.get('.swatch-option.text').contains(size).click();
     }
