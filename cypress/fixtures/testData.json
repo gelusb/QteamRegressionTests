@@ -3,12 +3,14 @@
       {
         "name": "Lono Yoga Short",
         "size": "34",
-        "color": "Blue"
+        "color": "Blue",
+        "productPrice": "32.00 "
       },
       {
         "name": "Lando Gym Jacket",
         "size": "L",
-        "color": "Blue"
+        "color": "Blue",
+         "productPrice": "99.00 "
       }
     ],
     "shippingDetails": {

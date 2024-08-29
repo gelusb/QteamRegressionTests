@@ -1,8 +1,8 @@
-import HomePage from '../../page_objects/HomePage';
-import ProductPage from '../../page_objects/ProductPage';
-import CartPage from '../../page_objects/CartPage';
-import CheckoutPage from '../../page_objects/CheckoutPage';
-import OrderConfirmationPage from '../../page_objects/OrderConfirmationPage';
+import { homePage } from '../../pages/homePage';
+import { productPage } from '../../pages/productPage';
+import { cartPage } from '../../pages/cartPage';
+import { checkoutPage } from '../../pages/checkoutPage';
+import { orderConfirmationPage } from '../../pages/orderConfirmationPage';
 import testData from '../../fixtures/testData.json';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -10,33 +10,29 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 describe('Complete Order Flow with Multiple Products', () => {
-    const homePage = new HomePage();
-    const productPage = new ProductPage();
-    const cartPage = new CartPage();
-    const checkoutPage = new CheckoutPage();
-    const orderConfirmationPage = new OrderConfirmationPage();
 
   it('should complete an order with multiple products and variations', () => {
-    homePage.visit();
-    homePage.searchProduct(testData.products[0].name);
+
+    cy.visit('https://magento.softwaretestingboard.com/');
+    homePage.searchProductByName(testData.products[0].name);
     homePage.selectProductFromResults(testData.products[0].name);
-    productPage.selectSize(testData.products[0].size);
-    productPage.selectColor(testData.products[0].color);
-    productPage.adjustQuantity(2);
-    productPage.addToCart();
-    homePage.searchProduct(testData.products[1].name);
+    productPage.selectProductSize(testData.products[0].size);
+    productPage.selectProductColor(testData.products[0].color);
+    productPage.adjustProductQuantity(2);
+    productPage.clickOnAddToCartButton();
+    homePage.searchProductByName(testData.products[1].name);
     homePage.selectProductFromResults(testData.products[1].name);
-    productPage.selectSize(testData.products[1].size);
-    productPage.selectColor(testData.products[1].color);
-    productPage.addToCart();
-    productPage.goToCart();
-    cartPage.checkCartTotal('$163.00');
-    cartPage.proceedToCheckout();
+    productPage.selectProductSize(testData.products[1].size);
+    productPage.selectProductColor(testData.products[1].color);
+    productPage.clickOnAddToCartButton();
+    productPage.clickOnShoppingCart();
+    cartPage.assertCartTotalPrice('$163.00');
+    cartPage.clickOnProceedToCheckout();
     checkoutPage.fillShippingDetails(testData.shippingDetails);
-    checkoutPage.selectShipping(0);
+    checkoutPage.selectShippingOption(0);
     checkoutPage.clickOnNextButton();
-    checkoutPage.placeOrder();
-    orderConfirmationPage.verifyOrderSuccess();
+    checkoutPage.clickPlaceOrderButton();
+    orderConfirmationPage.assertOrderSuccess();
     orderConfirmationPage.getOrderNumber().then((orderNumber) => {
     cy.log(`Order Number: ${orderNumber}`);
     });
