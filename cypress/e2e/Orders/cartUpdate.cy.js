@@ -1,8 +1,8 @@
-import { homePage } from '../../pages/homePage';
-import { productPage } from '../../pages/productPage';
-import { cartPage } from '../../pages/cartPage';
+import { homePage } from '../../pageFunctions/homePage';
+import { productPage } from '../../pageFunctions/productPage';
+import { cartPage } from '../../pageFunctions/cartPage';
 import testData from '../../fixtures/testData.json';
-import { orderConfirmationPage } from '../../pages/orderConfirmationPage';
+import { orderConfirmationPage } from '../../pageFunctions/orderConfirmationPage';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false

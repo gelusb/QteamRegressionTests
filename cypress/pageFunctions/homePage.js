@@ -1,4 +1,4 @@
-import { homePageSelectors } from "../utils/homePageSelectors";
+import { homePageSelectors } from "../pageSelectors/homePageSelectors";
 
 export class HomePage {
 

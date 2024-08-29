@@ -1,4 +1,4 @@
-import { confirmationPageSelectors } from "../utils/confirmationPageSelectors";
+import { confirmationPageSelectors } from "../pageSelectors/confirmationPageSelectors";
 
 export class OrderConfirmationPage {
 
@@ -7,10 +7,12 @@ export class OrderConfirmationPage {
     }
   
     getOrderNumber() {
-      return cy.get(confirmationPageSelectors.orderConfirmation).invoke('text');
+      // de ce functia asta e cu return si restu nu? Plus ca ai putea salva OrderNumberu intr-un alias, cred ca e mai bine
+      return cy.get(confirmationPageSelectors.orderConfirmation).invoke('text').as('orderNumber');
     }
 
     assertEmptyCartMessage(){
+      // nu tre sa ai functii de asert, le bagi direct in test aserturile, chainuite de ce ai yielduit in test
       cy.get(confirmationPageSelectors.emptyCartMessage).should('contain.text', 'You have no items in your shopping cart.');
     }
   }

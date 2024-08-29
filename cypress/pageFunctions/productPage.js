@@ -1,4 +1,4 @@
-import { productPageSelectors } from "../utils/productPageSelectors";
+import { productPageSelectors } from "../pageSelectors/productPageSelectors";
 
 export class ProductPage {
 

@@ -1,4 +1,4 @@
-import { CartPageSelectors, cartPageSelectors } from "../utils/cartPageSelectors";
+import { CartPageSelectors, cartPageSelectors } from "../pageSelectors/cartPageSelectors";
 
 export class CartPage {
   

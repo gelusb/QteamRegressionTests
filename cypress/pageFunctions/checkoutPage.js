@@ -1,4 +1,4 @@
-import { checkoutPageSelectors, CheckoutPageSelectors } from "../utils/checkoutPageSelectors";
+import { checkoutPageSelectors, CheckoutPageSelectors } from "../pageSelectors/checkoutPageSelectors";
 
 export class CheckoutPage {
   
